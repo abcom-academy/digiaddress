@@ -49,7 +49,7 @@
     </div>
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=DEVELOPER_ACCOUNT_KEY">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<YOUR KEY>">
 </script>
 <script src="js/findAddressApp.js">
 </script>
