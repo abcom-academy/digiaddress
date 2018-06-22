@@ -12,6 +12,7 @@
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=<YOUR KEY>"></script>
 
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -27,65 +28,13 @@
     <div class="row row-allign">
         <div class="col-sm-4">
 
-            <div class="form-border spacing-top">
-                <div class="card-header" style="background:#cc0001; color:#ffff">
-                    <h5>Enter Address</h5>
-                </div>
-                <div class="extra-padding">
+            <!-- add form code here -->
 
-                    <form ng-submit="processForm()" class="custom-form">
-                            <div class="form-group input-group-sm">
-                                <label for="state">State</label>
-                                <input type="text" class="form-control rounded-0 textbox-border" id="state"
-                                       placeholder="" ng-model="address.state"
-                                       ng-blur="geocodeAddress(address,'state')" required=""/>
-                            </div>
-                            <div class="form-group input-group-sm">
-                                <label for="zip" class="animated-label">Zip</label>
-                                <input type="text" class="form-control rounded-0 textbox-depth textbox-border"
-                                       id="zip" ng-model="address.zip" disabled="disabled"
-                                       ng-blur="geocodeAddress(address,'zip')" required=""/>
-                            </div>
-                            <div class="form-group input-group-sm">
-                                <label for="town">Town</label>
-                                <input type="text" class="form-control rounded-0 textbox-border "
-                                       id="town" ng-model="address.town" disabled="disabled"
-                                       ng-blur="geocodeAddress(address,'town')" required=""/>
-                            </div>
-                            <div class="form-group input-group-sm">
-                                <label for="street">Street</label>
-                                <input type="text" class="form-control rounded-0 textbox-border" id="street"
-                                       placeholder="" ng-model="address.street" disabled="disabled"
-                                       ng-blur="geocodeAddress(address,'street')" required=""/>
-                            </div>
 
-                            <div class="form-group input-group-sm">
-                                <label for="house">House</label>
-                                <input type="text" class="form-control rounded-0 textbox-border" id="house"
-                                       placeholder="" ng-model="address.house" disabled="disabled"
-                                       ng-blur="geocodeAddress(address,'house')" required=""/>
-                            </div>
-                            <div class="form-group input-group-sm">
-                                <input type="hidden" ng-model="address.lat"/>
-                            </div>
-                            <div class="form-group input-group-sm">
-                                <input type="hidden" ng-model="address.long"/>
-                            </div>
-                            <button type="submit" disabled="disabled" class="btn btn-color btn-block rounded-0" id="generate"
-                                    style="color:#ffff;background-color: #cc0001;">Generate
-                            </button>
-                    </form>
-                </div>
-            </div>
             <br>
         </div>
-        <div class="col-sm-8 map-align" ng-init="initMap()">
-            <div id="map" class="extra-padding" style="height: 100%;
-            margin-bottom: 15px;"></div>
-            <label id="geocoordinates" ng-show="latlng" ng-model="lt"></label><br/>
-            <label id="geoaddress" ng-show="address" ng-model="padd"></label>
-            </div>
-        </div>
+        <!-- add google map control -->
+
 
     </div>
 

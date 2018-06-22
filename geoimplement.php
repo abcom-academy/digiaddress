@@ -18,7 +18,6 @@ function geocode($address){
     // decode the json
     $resp = json_decode($resp_json, true);
 
-    // response status will be 'OK', if able to geocode given address
     if ($resp['status'] == 'OK') {
         return $resp['results'][0];
     } else {
