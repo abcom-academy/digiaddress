@@ -47,8 +47,7 @@ addapp.controller('findControl', function($scope, $http){
                         geoCoordLabel.html("Geo Coordinate: "+ jsonlatlng.latitude +","+ jsonlatlng.longitude);
 
                         geoAddressLabel = angular.element(document.querySelector('#geoaddress'));
-                        geoAddressLabel.html("Geo Address: "+ jsonlatlng.house +","+ jsonlatlng.town +","+ jsonlatlng.street +","+ jsonlatlng.state + " " + jsonlatlng.zip );
-
+                        geoAddressLabel.html("Geo Address: " + jsonlatlng.house +","+ jsonlatlng.town +","+ jsonlatlng.street +","+ jsonlatlng.state + " " + jsonlatlng.zip );
 
                         locationMap.setCenter(new google.maps.LatLng(jsonlatlng.latitude, jsonlatlng.longitude));
                         locationMap.setZoom(18);

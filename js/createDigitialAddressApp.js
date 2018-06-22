@@ -54,70 +54,9 @@ createDigitialAddressApp.controller('digiAddressGenerator', function ($scope, $h
                     fullAddress = fullAddress + address ['zip'];
                 }
 
-                if (fullAddress !== "") {
-                    $http({
-                        method: 'POST',
-                        url: 'geoimplement.php',
-                        data: {address: fullAddress},
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                // add code for locating the address on Google maps
 
-                    }).then(function successCallback(results) {
 
-                        if (results.data !== "false") {
-                            removeRectangle();
-
-                            new google.maps.Marker({
-                                map: locationMap,
-                                position: results.data.geometry.location
-                            });
-
-                            lat = results.data.geometry.location.lat;
-                            lng = results.data.geometry.location.lng;
-
-                            $scope.address.lat = lat;
-                            $scope.address.lng = lng;
-
-                            geoCoordLabel = angular.element(document.querySelector('#geocoordinates'));
-                            geoCoordLabel.html("Geo Coordinate: " + lat + "," + lng);
-
-                            geoAddressLabel = angular.element(document.querySelector('#geoaddress'));
-                            geoAddressLabel.html("Geo Address: " + fullAddress);
-
-                            $scope.latlng = true;
-
-                            if (results.data.geometry.viewport) {
-
-                                rectangle = new google.maps.Rectangle({
-                                    strokeColor: '#FF0000',
-                                    strokeOpacity: 0.8,
-                                    strokeWeight: 0.5,
-                                    fillColor: '#FF0000',
-                                    fillOpacity: 0.35,
-                                    map: locationMap,
-                                    bounds: {
-                                        north: results.data.geometry.viewport.northeast.lat,
-                                        south: results.data.geometry.viewport.southwest.lat,
-                                        east: results.data.geometry.viewport.northeast.lng,
-                                        west: results.data.geometry.viewport.southwest.lng
-                                    }
-                                });
-
-                                var googleBounds = new google.maps.LatLngBounds(results.data.geometry.viewport.southwest, results.data.geometry.viewport.northeast);
-
-                                locationMap.setCenter(new google.maps.LatLng(lat, lng));
-                                locationMap.fitBounds(googleBounds);
-                            }
-                        } else {
-                            errorLabel = angular.element(document.querySelector('#lt'));
-                            errorLabel.html("Place not found.");
-                            $scope.latlng = true;
-                            removeRectangle();
-                        }
-
-                    }, function errorCallback(results) {
-                       console.log(results);
-                    });
-                }
             }
         }
     };
