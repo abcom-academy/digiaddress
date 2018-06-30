@@ -55,7 +55,8 @@ createDigitialAddressApp.controller('digiAddressGenerator', function ($scope, $h
                 }
 
                 // add code for locating the address on Google maps
-
+		
+		
 
             }
         }
@@ -96,5 +97,4 @@ createDigitialAddressApp.controller('digiAddressGenerator', function ($scope, $h
             });
     };
 });
-
 
