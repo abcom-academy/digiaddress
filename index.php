@@ -29,15 +29,17 @@
         <div class="col-sm-4">
 
             <!-- add form code here -->
-
+	
 
             <br>
         </div>
-        <!-- add google map control -->
 
+        <!-- add google map control -->
+	
+	
 
     </div>
-
+	
     <div class="modal fade" id="digitalAddressDialog" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
