@@ -12,7 +12,7 @@ class databaseConnection
         $dbname = "digitaladdress";
         $servername = "localhost";
         $username = "root";
-        $pass = "";
+        $pass = "your_password";
         $conn = mysqli_connect($servername, $username, $pass, $dbname);
 
         if ($conn === false) {
